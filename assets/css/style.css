@@ -1,0 +1,15 @@
+  #main-content {
+    padding-top: 75px;
+  }
+
+ button, div, form, input {
+      margin: 10px;
+  }
+
+button {
+      margin: 20px;
+
+  }
+
+img {width: 250px;
+        height: 250px}
