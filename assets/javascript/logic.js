@@ -34,7 +34,6 @@ $('#addMeme').on('click', function(){
 
   return false;
 })
-//=====================================================================
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // This event listener handles display of gifs
@@ -49,7 +48,6 @@ function reanimateGif(){
   console.log("action=" + action);
 
   if (action == "still") {
-   //  $(this).attr("src", $(this).attr) = $(this).attr("data-animate");
       $(this).attr("src", $(this).attr("src-animate"));
       $(this).attr("state", "animate");
   } else {
@@ -57,9 +55,6 @@ function reanimateGif(){
       $(this).attr("state", "still");
   }
 }
-
-//})
-//=====================================================================
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Generic function for displaying meme buttons
@@ -77,7 +72,6 @@ function createButtons(){
       $('#memeButtons').append(a);       // Added the button to the HTML
   }
 }
-//=====================================================================
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // This function retrieves 10 gifs from AJAX call for direct display
@@ -88,7 +82,7 @@ function displayGifList(){
 
   meme = $(this).attr('meme-name');
 
-  var queryURL = "http://api.giphy.com/v1/gifs/search?q=" +
+  var queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
         meme + "&api_key=dc6zaTOxFJmzC&limit=10";
 
 //  var queryURL =  "http://api.giphy.com/v1/gifs/translate?s=" + 
@@ -115,17 +109,12 @@ function displayGifList(){
         pImage.attr("state", "still");
         pImage.attr("class", "gif");
 
-        //gifDiv.prepend(p);
-        //gifDiv.prepend(pImage);
-
         $("#gifViewer").prepend(p);
         $("#gifViewer").prepend(pImage);
 
-      //  $("#gifViewer").prepend(gifDiv);
       }
     }); 
 }
-//=====================================================================
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // This function sorts the memeList in ascending order
